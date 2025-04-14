@@ -4,7 +4,7 @@
 
 ## Описание компонентов
 
-### ✅ Deployment (`nginx`)
+### ✅ Deployment
 - 2 реплики
 - `topologySpreadConstraints` с `maxSkew: 1` — распределение по зонам 2 1 1 (пиковая нагрузка)
 - `whenUnsatisfiable: ScheduleAnyway` — выбирал между DoNotSchedule и ScheduleAnyway. Если мы говорим о том, что ноды забиты под завязку, то конечно оставляем DoNotSchedule, и ложится только этот сервис, в случае если вдруг сразу отваливаются 2 из 3 зон.
